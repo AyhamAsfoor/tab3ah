@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: your-username/tab3ah_store
+  branch: main
+  auth_endpoint: /api/auth
+  base_url: https://your-domain.com
+
+media_folder: "client/public/images"
+public_folder: "/images"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "client/public/data"
+    create: false
+    slug: "products"
+    extension: "json"
+    format: "json"
+    files:
+      - name: "products"
+        label: "Products List"
+        file: "client/public/data/products.json"
+        fields:
+          - name: products
+            label: Products
+            widget: list
+            fields:
+              - { name: id, label: ID, widget: string, pattern: ["^[a-z0-9-]+$", "Must be lowercase with hyphens"] }
+              - { name: name, label: "Product Name (English)", widget: string }
+              - { name: name_ar, label: "Product Name (Arabic)", widget: string }
+              - { name: price, label: Price, widget: number, value_type: "float", step: 0.01, min: 0 }
+              - { name: image, label: "Product Image", widget: image, media_library: { config: { max_file_size: 5242880 } } }
+              - { name: description, label: "Description (English)", widget: text }
+              - { name: description_ar, label: "Description (Arabic)", widget: text }
+              - { name: category, label: Category, widget: select, options: ["3D Models", "Custom Prints", "Materials"] }
+              - { name: featured, label: Featured, widget: boolean, default: false }
