@@ -1,0 +1,90 @@
+[
+  {
+    "id": "model-001",
+    "name": "Miniature Dragon",
+    "name_ar": "تمثال التنين الصغير",
+    "price": 45.00,
+    "image": "/images/dragon.jpg",
+    "description": "Highly detailed miniature dragon figurine, perfect for collectors and fantasy enthusiasts. Printed in high-resolution resin with intricate scales and wings.",
+    "description_ar": "تمثال تنين صغير مفصل للغاية، مثالي لهواة جمع الأشياء وعشاق الخيال. مطبوع بدقة عالية من الراتنج مع حراشف وأجنحة معقدة.",
+    "category": "3D Models",
+    "featured": true
+  },
+  {
+    "id": "model-002",
+    "name": "Geometric Vase",
+    "name_ar": "إناء هندسي",
+    "price": 35.00,
+    "image": "/images/vase.jpg",
+    "description": "Modern geometric vase with clean lines and contemporary design. Ideal for home decoration and plant display.",
+    "description_ar": "إناء هندسي حديث بخطوط نظيفة وتصميم معاصر. مثالي لتزيين المنزل وعرض النباتات.",
+    "category": "3D Models",
+    "featured": true
+  },
+  {
+    "id": "custom-001",
+    "name": "Custom Lithophane Portrait",
+    "name_ar": "صورة ليثوفان مخصصة",
+    "price": 65.00,
+    "image": "/images/lithophane.jpg",
+    "description": "Transform your favorite photo into a stunning lithophane. Light reveals hidden details when illuminated. Perfect gift for special occasions.",
+    "description_ar": "حول صورتك المفضلة إلى ليثوفان مذهل. يكشف الضوء عن التفاصيل المخفية عند الإضاءة. هدية مثالية للمناسبات الخاصة.",
+    "category": "Custom Prints",
+    "featured": false
+  },
+  {
+    "id": "material-001",
+    "name": "PLA Filament Bundle",
+    "name_ar": "حزمة خيط PLA",
+    "price": 28.00,
+    "image": "/images/pla-filament.jpg",
+    "description": "High-quality PLA filament in assorted colors. 1kg total weight, perfect for various 3D printing projects. Eco-friendly and easy to print.",
+    "description_ar": "خيط PLA عالي الجودة بألوان متنوعة. وزن إجمالي 1 كجم، مثالي لمشاريع الطباعة ثلاثية الأبعاد المختلفة. صديق للبيئة وسهل الطباعة.",
+    "category": "Materials",
+    "featured": false
+  },
+  {
+    "id": "model-003",
+    "name": "Articulated Dragon Toy",
+    "name_ar": "لعبة التنين المفصلية",
+    "price": 52.00,
+    "image": "/images/articulated-dragon.jpg",
+    "description": "Fully articulated dragon with movable joints. Great for play and display. Available in multiple colors.",
+    "description_ar": "تنين مفصلي بالكامل مع مفاصل متحركة. رائع للعب والعرض. متوفر بألوان متعددة.",
+    "category": "3D Models",
+    "featured": true
+  },
+  {
+    "id": "material-002",
+    "name": "Resin Casting Kit",
+    "name_ar": "مجموعة صب الراتنج",
+    "price": 42.00,
+    "image": "/images/resin-kit.jpg",
+    "description": "Complete resin casting kit with molds and tools. Create professional-quality resin prints at home.",
+    "description_ar": "مجموعة صب راتنج كاملة مع قوالب وأدوات. قم بإنشاء طبعات راتنج بجودة احترافية في المنزل.",
+    "category": "Materials",
+    "featured": false
+  },
+  {
+    "id": "custom-002",
+    "name": "Personalized Nameplate",
+    "name_ar": "لوحة اسم مخصصة",
+    "price": 25.00,
+    "image": "/images/nameplate.jpg",
+    "description": "Custom nameplate with your name or text. Perfect for desks, doors, or gifts. Multiple font styles available.",
+    "description_ar": "لوحة اسم مخصصة باسمك أو نصك. مثالية للمكاتب أو الأبواب أو الهدايا. أنماط خطوط متعددة متاحة.",
+    "category": "Custom Prints",
+    "featured": false
+  },
+  {
+    "id": "model-004",
+    "name": "Architectural Model Set",
+    "name_ar": "مجموعة نموذج معماري",
+    "price": 78.00,
+    "image": "/images/architecture.jpg",
+    "description": "Detailed architectural models of famous buildings. Educational and collectible. Perfect for architecture enthusiasts.",
+    "description_ar": "نماذج معمارية مفصلة للمباني الشهيرة. تعليمية وقابلة للجمع. مثالية لمحبي العمارة.",
+    "category": "3D Models",
+    "featured": true
+  }
+]
