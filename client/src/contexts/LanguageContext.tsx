@@ -13,9 +13,9 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations: Record<Language, Record<string, string>> = {
   en: {
-    'home.title': 'Tab3ah Store',
+    'home.title': 'Tab3a Store',
     'home.subtitle': 'Modern 3D Printing Solutions',
-    'home.hero.title': 'Welcome to Tab3ah',
+    'home.hero.title': 'Welcome to Tab3a',
     'home.hero.subtitle': 'Discover our collection of premium 3D-printed products and custom printing services',
     'home.featured': 'Featured Products',
     'home.categories': 'Shop by Category',
@@ -44,9 +44,9 @@ const translations: Record<Language, Record<string, string>> = {
     'cart.continueShopping': 'Continue Shopping',
     'cart.quantity': 'Quantity',
     'cart.remove': 'Remove',
-    'about.title': 'About Tab3ah',
+    'about.title': 'About Tab3',
     'about.description': 'Tab3ah is a modern 3D printing shop dedicated to bringing your ideas to life with cutting-edge technology and exceptional quality.',
-    'footer.copyright': '© 2024 Tab3ah Store. All rights reserved.',
+    'footer.copyright': '© 2025 Tab3a Store. All rights reserved.',
     'footer.contact': 'Contact Us',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
