@@ -30,19 +30,22 @@ export function CheckoutDialog() {
 
     // الحصول على رابط الموقع الأساسي لتحويل صور المنتجات إلى روابط كاملة
     // لأن برامج الإيميل لا تفهم الروابط المحلية مثل /images/item.jpg
-    const baseUrl = window.location.origin;
+    const baseUrl = window.location.origin + import.meta.env.BASE_URL;
 
+    // تجهيز البيانات لـ EmailJS
     const templateParams = {
       order_id: Date.now(),
       email: data.email,
       
-      // هنا السر: نرسل قائمة المنتجات كـ Array ليعمل التكرار {{#orders}} في القالب
+      // هنا نقوم بإنشاء قائمة (Array) لكل منتج، ليعمل التكرار {{#orders}} في القالب
       orders: items.map(item => ({
         name: item.name,
         units: item.quantity,
-        price: item.price.toFixed(2),
-        // تحويل الرابط إلى رابط كامل: https://ayhamasfoor.github.io/tab3ah/images/...
-        image_url: item.image.startsWith('http') ? item.image : `${baseUrl}${item.image}`
+        price: item.price.toFixed(2), // سعر القطعة الواحدة
+        // تحويل مسار الصورة إلى رابط كامل: https://.../tab3ah/images/...
+        image_url: item.image.startsWith('http') 
+          ? item.image 
+          : `${baseUrl}${item.image.startsWith('/') ? item.image.slice(1) : item.image}`
       })),
 
       // كائن التكلفة ليعمل {{cost.total}} و {{cost.shipping}}
@@ -52,10 +55,11 @@ export function CheckoutDialog() {
         total: grandTotal.toFixed(2)
       },
 
-      // بيانات إضافية (اختياري)
+      // يمكن إضافة بيانات العميل هنا إذا أردت عرضها في مكان آخر في القالب
       customer_name: data.name,
       customer_phone: data.phone,
-      customer_address: data.address
+      customer_address: data.address,
+      customer_notes: data.notes || "No notes"
     };
 
     try {
@@ -64,7 +68,7 @@ export function CheckoutDialog() {
         "service_a03pg51", 
         "template_p9url3b", 
         templateParams, 
-        "P4XREttXNUOkgEMSh" 
+        "YOUR_PUBLIC_KEY" 
       );
 
       toast.success("Order sent successfully!");
