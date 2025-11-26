@@ -35,10 +35,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           alt={displayName}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
           onError={(e) => {
-            /
-         
+            // هنا كان الخطأ، قمنا بتصحيح الرابط ليستخدم خدمة placehold.co الموثوقة
+            // وأضفنا https:// للتأكد من أنه رابط ويب
             const target = e.target as HTMLImageElement;
-          
+            // نمنع التكرار اللانهائي في حال فشل تحميل الصورة البديلة أيضاً
             if (!target.src.includes('placehold.co')) {
                 target.src = `https://placehold.co/300x200/png?text=${encodeURIComponent(displayName)}`;
             }
