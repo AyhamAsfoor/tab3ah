@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useCart } from '@/contexts/CartContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { CheckoutDialog } from '@/components/CheckoutDialog';
 
 export default function Cart() {
   const { t, language } = useLanguage();
@@ -156,12 +157,10 @@ export default function Cart() {
                   </span>
                 </div>
 
-                {/* Snipcart Checkout Button */}
-                <button
-                  className="snipcart-checkout w-full bg-accent text-white font-semibold py-3 rounded-lg hover:bg-accent/90 transition-colors mb-4"
-                >
-                  {t('cart.checkout')}
-                </button>
+                {/* Custom Checkout Dialog */}
+		<div className="mb-4">
+  		<CheckoutDialog />
+		</div>
 
                 <Button
                   variant="outline"
