@@ -21,7 +21,6 @@ export function useProducts() {
     const fetchProducts = async () => {
       try {
         
-        // import.meta.env.BASE_URL يحتوي على "/tab3ah/"
         const response = await fetch(`${import.meta.env.BASE_URL}data/products.json`);
         
         if (!response.ok) {
@@ -33,8 +32,9 @@ export function useProducts() {
        
         const fixedData = data.map((product: Product) => ({
           ...product,
-         
-          image: `${import.meta.env.BASE_URL}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`
+          image: product.image.startsWith('http') 
+            ? product.image 
+            : `${import.meta.env.BASE_URL}${product.image.startsWith('/') ? product.image.slice(1) : product.image}`
         }));
 
         setProducts(fixedData);
