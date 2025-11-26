@@ -35,14 +35,21 @@ export default function ProductCard({ product }: ProductCardProps) {
           alt={displayName}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/300x200?text=' + encodeURIComponent(displayName);
+            /
+         
+            const target = e.target as HTMLImageElement;
+          
+            if (!target.src.includes('placehold.co')) {
+                target.src = `https://placehold.co/300x200/png?text=${encodeURIComponent(displayName)}`;
+            }
           }}
         />
         <div className="absolute top-2 right-2 bg-accent text-white px-3 py-1 rounded-full text-xs font-semibold">
           {language === 'ar' ? (
             product.category === '3D Models' ? 'نماذج ثلاثية الأبعاد' :
             product.category === 'Custom Prints' ? 'طبعات مخصصة' :
-            'المواد'
+            product.category === 'Materials' ? 'المواد' :
+            product.category
           ) : product.category}
         </div>
       </div>
