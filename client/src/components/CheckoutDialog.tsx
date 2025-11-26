@@ -68,7 +68,7 @@ export function CheckoutDialog() {
         "service_a03pg51", 
         "template_p9url3b", 
         templateParams, 
-        "YOUR_PUBLIC_KEY" 
+        "P4XREttXNUOkgEMSh" 
       );
 
       toast.success("Order sent successfully!");
