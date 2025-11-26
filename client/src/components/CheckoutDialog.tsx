@@ -25,7 +25,6 @@ export function CheckoutDialog() {
   const onSubmit = async (data: CheckoutFormData) => {
     setIsSubmitting(true);
 
-    // 1. تجهيز نص تفاصيل الطلب
     const itemsList = items
       .map(item => `• ${item.name} (Qty: ${item.quantity})`)
       .join("\n");
@@ -39,7 +38,6 @@ Notes: ${data.notes || "None"}
 ${itemsList}
     `.trim();
 
-    // 2. تجهيز البيانات (تأكدنا من إغلاق الأقواس بشكل صحيح)
     const templateParams = {
       order_id: Date.now(),
       orders: fullOrderDetails,
@@ -52,7 +50,7 @@ ${itemsList}
     };
 
     try {
-      // ⚠️ استبدل YOUR_PUBLIC_KEY بالمفتاح الخاص بك وتأكد من وجود علامات الاقتباس حوله
+     
       await emailjs.send(
         "service_a03pg51", 
         "template_p9url3b", 
@@ -115,7 +113,7 @@ ${itemsList}
 
           <div className="pt-4">
             <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Sending Order..." : "Confirm Order"}
+              {isSubmitting ? "Sending..." : "Confirm Order"}
             </Button>
           </div>
         </form>
