@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-bold gradient-text">Tab3ah</h3>
+            <h3 className="text-lg font-bold gradient-text">Tab3a</h3>
             <p className="text-sm text-gray-400">
               {t('about.description')}
             </p>
@@ -40,8 +40,8 @@ export default function Footer() {
             <h4 className="font-semibold">Contact</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>Email: info@tab3ah.com</li>
-              <li>Phone: +966 XX XXX XXXX</li>
-              <li>Location: Saudi Arabia</li>
+              <li>Phone: +962 7 8635 5525</li>
+              <li>Location: Amman, Jordan</li>
             </ul>
           </div>
         </div>

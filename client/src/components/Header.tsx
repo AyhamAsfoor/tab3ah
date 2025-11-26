@@ -27,7 +27,7 @@ export default function Header() {
         <Link href="/">
           <a className="flex items-center gap-2 font-bold text-xl gradient-text">
             <span className="text-2xl">🖨️</span>
-            <span>Tab3ah</span>
+            <span>Tab3a</span>
           </a>
         </Link>
 
