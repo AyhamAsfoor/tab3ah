@@ -5,26 +5,20 @@ import * as React from "react";
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
   ({ className, type, onKeyDown, onCompositionStart, onCompositionEnd, ...props }, ref) => {
-    // Get dialog composition context if available (will be no-op if not inside Dialog)
+    
     const dialogComposition = useDialogComposition();
 
-    // Add composition event handlers to support input method editor (IME) for CJK languages.
+    
     const {
       onCompositionStart: handleCompositionStart,
       onCompositionEnd: handleCompositionEnd,
       onKeyDown: handleKeyDown,
     } = useComposition<HTMLInputElement>({
       onKeyDown: (e) => {
-        // Check if this is an Enter key that should be blocked
         const isComposing = (e.nativeEvent as any).isComposing || dialogComposition.justEndedComposing();
-
-        // If Enter key is pressed while composing or just after composition ended,
-        // don't call the user's onKeyDown (this blocks the business logic)
         if (e.key === "Enter" && isComposing) {
           return;
         }
-
-        // Otherwise, call the user's onKeyDown
         onKeyDown?.(e);
       },
       onCompositionStart: (e) => {
@@ -32,10 +26,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
         onCompositionStart?.(e);
       },
       onCompositionEnd: (e) => {
-        // Mark that composition just ended - this helps handle the Enter key that confirms input
         dialogComposition.markCompositionEnd();
-        // Delay setting composing to false to handle Safari's event order
-        // In Safari, compositionEnd fires before the ESC keydown event
         setTimeout(() => {
           dialogComposition.setComposing(false);
         }, 100);
@@ -53,7 +44,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
           className
         )}
-        ref={ref} // 👈 هذا هو السطر السحري المفقود!
+        ref={ref}  // 👈 هذا هو السطر الأهم! بدونه لن يعمل الفورم
         onCompositionStart={handleCompositionStart}
         onCompositionEnd={handleCompositionEnd}
         onKeyDown={handleKeyDown}
